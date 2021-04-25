@@ -241,6 +241,8 @@ class Ui_Dialog(object):
         self.lblTitle_2.setText(_translate("Dialog", "<html><head/><body><p>CALCULATOR</p></body></html>"))
         self.lblTitle_3.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:10pt;\">Welcome to your preferred GPA / CGPA Calculator!!!</span></p></body></html>"))
 
+
+
 app = QtWidgets.QApplication( sys.argv )
 w = Ui_Dialog.retranslateUi()
 w.show()

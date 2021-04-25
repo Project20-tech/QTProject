@@ -7,8 +7,17 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+# form PyQt5.QtWidgets import QMainWindow, QApplication
+# from splashScreen import setupUi
+import sys
 
 class Ui_GPA(object):
+    
+    def __init__( self ):
+        super().__init__()
+        layout = QtWidgets()
+        self.setLayout( layout )
+    
     def setupUi(self, GPA):
         GPA.setObjectName("GPA")
         GPA.resize(442, 447)
@@ -174,6 +183,7 @@ class Ui_GPA(object):
 
         self.retranslateUi(GPA)
         QtCore.QMetaObject.connectSlotsByName(GPA)
+    
 
     def retranslateUi(self, GPA):
         _translate = QtCore.QCoreApplication.translate
@@ -194,4 +204,26 @@ class Ui_GPA(object):
         self.menuCGPA.setTitle(_translate("GPA", "CGPA"))
         self.menuHELP.setTitle(_translate("GPA", "HELP"))
         self.menuABOUT.setTitle(_translate("GPA", "ABOUT"))
+        
+class MainWindow( QtWidgets.QMainWindow ):
+    
+    def __init__( self ):
+        super().__init__()
+    
+    
+    def show_Ui_GPA( self, checked ):
+        w = Ui_GPA()
+        w.show()
 
+
+
+
+
+
+
+
+
+app = QtWidgets.QApplication( sys.argv )
+w = MainWindow()
+w.show()
+app.exec_()

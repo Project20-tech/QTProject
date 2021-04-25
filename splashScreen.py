@@ -7,14 +7,19 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from CGPA import Ui_CGPA
+from GPA import Ui_GPA
 import sys
 
 class Ui_Dialog(object):
     
     # Initializing the object
     def __init__( self ):
+        # Initiaating an interface
         super().__init__()
+        layout = QtWidgets()
+        # self.label = QLabel( "Splash Screen" )
+        # layout.addWidget( self.label )
+        self.setLayout( layout ) # setting our screen layout
     
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
@@ -107,6 +112,7 @@ class Ui_Dialog(object):
         self.lblTitle.setObjectName("lblTitle")
         self.btnGo = QtWidgets.QPushButton(Dialog)
         self.btnGo.setGeometry(QtCore.QRect(150, 280, 101, 51))
+        self.btnGo.clicked.connect( self, Ui_GPA )
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -217,7 +223,7 @@ class Ui_Dialog(object):
         Dialog.setTabOrder(self.cbInstitution, self.btnGo)
         Dialog.setTabOrder(self.btnGo, self.btnExit)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, Dialog):        
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "GPA CALCULATOR"))
         Dialog.setWhatsThis(_translate("Dialog", "This is a GPA Calculator"))
@@ -235,3 +241,7 @@ class Ui_Dialog(object):
         self.lblTitle_2.setText(_translate("Dialog", "<html><head/><body><p>CALCULATOR</p></body></html>"))
         self.lblTitle_3.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:10pt;\">Welcome to your preferred GPA / CGPA Calculator!!!</span></p></body></html>"))
 
+app = QtWidgets.QApplication( sys.argv )
+w = Ui_Dialog.retranslateUi()
+w.show()
+app.exec_()

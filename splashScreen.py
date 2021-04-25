@@ -8,8 +8,14 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from CGPA import Ui_CGPA
+import sys
 
 class Ui_Dialog(object):
+    
+    # Initializing the object
+    def __init__( self ):
+        super().__init__()
+    
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.setWindowModality(QtCore.Qt.ApplicationModal)

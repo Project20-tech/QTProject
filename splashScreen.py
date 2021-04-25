@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from CGPA import Ui_CGPA
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
